@@ -92,8 +92,6 @@ ORDER BY total_revenue DESC;
 
 ## Example Screenshot
 
-![SQL Query Screenshot](Screenshot 2026-01-09 235737.png)
-Screenshot 2026-01-09 235737.png
 
 
 
