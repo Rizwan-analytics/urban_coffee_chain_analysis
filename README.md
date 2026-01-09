@@ -90,8 +90,10 @@ WHERE YEAR(o.order_date) = 2025
 GROUP BY DATENAME(month, o.order_date)
 ORDER BY total_revenue DESC;
 
+## Example Screenshot
 
-
+![SQL Query Screenshot](Screenshot 2026-01-09 235737.png)
+Screenshot 2026-01-09 235737.png
 
 
 
