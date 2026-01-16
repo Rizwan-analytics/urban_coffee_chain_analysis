@@ -90,13 +90,85 @@ WHERE YEAR(o.order_date) = 2025
 GROUP BY DATENAME(month, o.order_date)
 ORDER BY total_revenue DESC;
 
-## Example Screenshot
+ **advance level query **
 
+--1.Calculate Customer Lifetime Value (CLV): total revenue per customer across all orders.
 
+select 
+c.customer_id,
+concat(c.first_name,'',c.last_name) as customer_name,
+sum(oi.quantity * oi.price) as total_revenue
+from customers c 
+join Orders  as o
+on c.customer_id = o.customer_id
+join Order_Items as oi
+on o.order_id = oi.order_id
+group by c.customer_id, concat(c.first_name,'',c.last_name)
+order by sum(oi.quantity * oi.price) desc
 
+--2.Rank products by revenue contribution using RANK() or DENSE_RANK().
+select 
+p.product_id,
+p.product_name,
+sum(oi.quantity*oi.price) as total_revenue,
+rank() over(order by sum(oi.quantity*oi.price) desc) as product_rank
+from products as p 
+join order_items as oi
+on p.product_id = oi.product_id
+group by p.product_id, p.product_name
+order by sum(oi.quantity*oi.price) desc
 
+--3. -- find duplicate customer bu email
+select 
+email,
+count(*) as duplicate_email
+from customers 
+group by email
+having count(*)>1
+-- there is not duplicate found 
 
+-- find duplicate customer through phone number 
+select 
+phone,
+count(*) as duplicate_phone
+from Customers
+group by phone
+having count(*)>1
 
+-- there is not duplicate phone found
+
+--4.Find the percentage of refunded orders per store location.
+select 
+store_location,
+concat(count(case when order_status = 'refunded' then 1 end)*100/count(*),'%') as refunded_percentage
+from orders 
+group by store_location 
+order by count(case when order_status = 'refunded' then 1 end)*100/count(*)  desc
+
+--5.Build a query that shows year-over-year growth in total sales.
+
+WITH customers_2024 AS (
+    SELECT 
+        customer_id,
+        CONCAT(first_name, ' ', last_name) AS customer_name
+    FROM Customers
+    WHERE YEAR(join_date) = 2024
+),
+orders_2025 AS (
+    SELECT DISTINCT customer_id
+    FROM Orders
+    WHERE YEAR(order_date) = 2025
+)
+SELECT 
+    COUNT(*) AS total_customers_2024,
+    COUNT(CASE WHEN o.customer_id IS NULL THEN 1 END) AS churned_customers,
+    ROUND(
+        COUNT(CASE WHEN o.customer_id IS NULL THEN 1 END) * 100.0 / COUNT(*), 
+        2
+    ) AS churn_rate_percentage
+FROM customers_2024 c
+LEFT JOIN orders_2025 o 
+    ON c.customer_id = o.customer_id;
 
 
 
