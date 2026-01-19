@@ -168,13 +168,9 @@ SELECT
     ) AS churn_rate_percentage
 FROM customers_2024 c
 LEFT JOIN orders_2025 o 
-    ON c.customer_id = o.customer_id;
+    ON c.customer_id = o.customer_id; '''
 
-## Top 5 Products by Revenue
-
-Here’s the Power BI chart showing the top 5 products:
-
-![Top 5 Products](images/Screenshot 2026-01-19 122829.png)
-
+## Dashboard
+<img width="1459" height="735" alt="top5_products" src="https://github.com/user-attachments/assets/19deb4ca-0e4b-4c77-8daf-5c48e24d4034" />
 
 
