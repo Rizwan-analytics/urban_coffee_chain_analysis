@@ -20,4 +20,6 @@ It demonstrates SQL data cleaning, and analysis using realistic, messy datasets 
 - Calculate Customer Lifetime Value (CLV): total revenue per customer across all orders.
 - Rank products by revenue contribution using RANK() or DENSE_RANK().
 - Find the percentage of refunded orders per store location.
-- Create a query to calculate the churn rate: customers who joined in 2024 but didn’t place any orders in 2025. 	
+- Create a query to calculate the churn rate: customers who joined in 2024 but didn’t place any orders in 2025.
+
+  
