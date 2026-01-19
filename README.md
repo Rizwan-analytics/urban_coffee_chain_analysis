@@ -170,7 +170,11 @@ FROM customers_2024 c
 LEFT JOIN orders_2025 o 
     ON c.customer_id = o.customer_id;
 
+## Top 5 Products by Revenue
 
+Here’s the Power BI chart showing the top 5 products:
+
+![Top 5 Products](images/Screenshot 2026-01-19 122829.png)
 
 
 
