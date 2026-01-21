@@ -2,7 +2,7 @@
 
 📌 Overview
 This project simulates the operations of a fictional Urban Coffee Chain, focusing on customer behavior, product performance, and loyalty program insights.
-It demonstrates SQL data cleaning, and analysis using realistic, messy datasets — designed to showcase recruiter‑friendly portfolio skills.
+It demonstrates SQL data cleaning, and analysis using realistic, messy datasets — designed to showcase customer-friendly realistic dataset.
 
 🗄️ Dataset - https://github.com/Rizwan-analytics/urban_coffee_chain_analysis/blob/main/urban_coffee_chain_dataset.xlsx
 - Customers: first_name, last_name, email, phone and join_date
@@ -33,6 +33,35 @@ It demonstrates SQL data cleaning, and analysis using realistic, messy datasets 
 - Conditional Logic → CASE WHEN for refund percentages
 
 ## power BI dashboard - <img width="1417" height="991" alt="image" src="https://github.com/user-attachments/assets/8d1e163b-823c-4c02-b524-100c225add51" />
+
+## I built a SQL project for a fictional coffee shop chain. I created tables for customers, products, and orders, inserted realistic data, and wrote queries to find top products, customer tier distribution, and customer lifetime value. This shows how SQL can turn raw sales data into insights that help businesses make smarter decisions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
